@@ -32,33 +32,33 @@ ansible  传递ssh-keygen   公钥
 
 对于配置文件，需要查看官方手册:http://hadoop.apache.org/docs/    ->  版本    -> 最下方左侧
 
-在/usr/local/hadoop/etc    下的core-site.xml   hdfs-site.xml      
-<configuration>
-   <property>
-      <name></name>
-      <value></value>
-      <description></description>             //描述信息，可写可不写
-   </property>
-</configuration>
+在/usr/local/hadoop/etc    下的core-site.xml   hdfs-site.xml                                
+<configuration>                            
+   <property>                                      
+      <name></name>                                   
+      <value></value>                              
+      <description></description>             //描述信息，可写可不写                                 
+   </property>                                   
+</configuration>                         
    
-配置文件 slaves 
-里面添加所有作Datanode的主机名
+配置文件 slaves                            
+里面添加所有作Datanode的主机名                           
    
       
-查看版本命令： /usr/local/hadoop/bin/hadoop    version
-对于hadoop的每台主机，配置文件都一样，故只需要配置好一台主机，然后scp 或ansible 传给其他主机
+查看版本命令： /usr/local/hadoop/bin/hadoop    version                     
+对于hadoop的每台主机，配置文件都一样，故只需要配置好一台主机，然后scp 或ansible 传给其他主机                         
 
 
 
 
 
-启动集群：
-主机     动作
-ALL：创建存储数据的目录，本实验是/var/hadoop     在core-site.xml里描述
-node：拷贝hadoop的目录，本实验是/usr/local/hadoop
-nn01： 格式化   /usr/local/hadoop/bin/hdfs   namenode   -format
-nn01: 启动集群：/usr/local/hadoop/sbin/start-dfs.sh
-验证： all ： jps
-      nn01：  /usr/local/hadoop/bin/hdfs   dfsadmin  -report
+启动集群：                             
+主机     动作                             
+ALL：创建存储数据的目录，本实验是/var/hadoop     在core-site.xml里描述                              
+node：拷贝hadoop的目录，本实验是/usr/local/hadoop                              
+nn01： 格式化   /usr/local/hadoop/bin/hdfs   namenode   -format                                     
+nn01: 启动集群：/usr/local/hadoop/sbin/start-dfs.sh                               
+验证： all ： jps                                        
+      nn01：  /usr/local/hadoop/bin/hdfs   dfsadmin  -report                              
 
 

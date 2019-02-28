@@ -15,7 +15,7 @@
 每台主机：2G内存，2cpu，10G硬盘，1网卡                                   
 设置主机名，和/ect/hosts                                         
 配置yam                                     
-准备好软件包                                    
+准备好Hadoopo软件包                                    
 
 可ansible配置环境                                   
 

@@ -44,8 +44,7 @@ ansible  传递ssh-keygen   公钥
 配置文件 slaves 
 里面添加所有作Datanode的主机名
    
-   
-   
+      
 查看版本命令： /usr/local/hadoop/bin/hadoop    version
 对于hadoop的每台主机，配置文件都一样，故只需要配置好一台主机，然后scp 或ansible 传给其他主机
 

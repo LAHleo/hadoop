@@ -30,8 +30,24 @@ https://pan.baidu.com/s/1zbBp9WGUrKBPdBCKDxWe_g
 ansible  传递ssh-keygen   公钥
 并且，在首次ssh时，不能出现询问yes的情况
 
-对于配置文件，需要查看官方手册:http://hadoop.apache.org/docs/
+对于配置文件，需要查看官方手册:http://hadoop.apache.org/docs/    ->  版本    -> 最下方左侧
+
+在/usr/local/hadoop/etc    下的core-site.xml   hdfs-site.xml      
+<configuration>
+   <property>
+      <name></name>
+      <value></value>
+      <description></description>             //描述信息，可写可不写
+   </property>
+</configuration>
+   
+配置文件 slaves 
+里面添加所有作Datanode的主机名
+   
+   
+   
 查看版本命令： /usr/local/hadoop/bin/hadoop    version
 对于hadoop的每台主机，配置文件都一样，故只需要配置好一台主机，然后scp 或ansible 传给其他主机
+
 
 

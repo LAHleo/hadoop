@@ -22,7 +22,16 @@ https://pan.baidu.com/s/1zbBp9WGUrKBPdBCKDxWe_g
 可ansible配置环境                                   
 
 需要依赖包：java-1.8.0-openjdk-devel                               
+
+官网下载软件包
+将解压好的目录，cp到/usr/local/hadoop
                                                                                                             
 配置ssh信任关系：
 ansible  传递ssh-keygen   公钥
 并且，在首次ssh时，不能出现询问yes的情况
+
+对于配置文件，需要查看官方手册:http://hadoop.apache.org/docs/
+查看版本命令： /usr/local/hadoop/bin/hadoop    version
+对于hadoop的每台主机，配置文件都一样，故只需要配置好一台主机，然后scp 或ansible 传给其他主机
+
+

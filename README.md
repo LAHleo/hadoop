@@ -23,3 +23,6 @@ https://pan.baidu.com/s/1zbBp9WGUrKBPdBCKDxWe_g
 
 需要依赖包：java-1.8.0-openjdk-devel                               
                                                                                                             
+配置ssh信任关系：
+ansible  传递ssh-keygen   公钥
+并且，在首次ssh时，不能出现询问yes的情况

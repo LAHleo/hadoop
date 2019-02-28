@@ -30,7 +30,7 @@ https://pan.baidu.com/s/1zbBp9WGUrKBPdBCKDxWe_g
 ansible  传递ssh-keygen   公钥
 并且，在首次ssh时，不能出现询问yes的情况
 
-对于配置文件，需要查看官方手册:http://hadoop.apache.org/docs/    ->  版本    -> 最下方左侧
+对于配置文件，需要查看官方手册:http://hadoop.apache.org/docs/    ->  版本    -> 最下方左侧Configuration 项目中
 
 在/usr/local/hadoop/etc    下的core-site.xml   hdfs-site.xml                                
 <configuration>                            

@@ -50,3 +50,15 @@ ansible  传递ssh-keygen   公钥
 
 
 
+
+
+启动集群：
+主机     动作
+ALL：创建存储数据的目录，本实验是/var/hadoop     在core-site.xml里描述
+node：拷贝hadoop的目录，本实验是/usr/local/hadoop
+nn01： 格式化   /usr/local/hadoop/bin/hdfs   namenode   -format
+nn01: 启动集群：/usr/local/hadoop/sbin/start-dfs.sh
+验证： all ： jps
+      nn01：  /usr/local/hadoop/bin/hdfs   dfsadmin  -report
+
+

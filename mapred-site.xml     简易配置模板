@@ -18,7 +18,7 @@
 
 <configuration>
    <property>
-      <name>mapreduce.framework.name</name>          
+      <name>mapreduce.framework.name</name>                 #指出mapreduce的运行框架：local    classic    yarn
       <value>yarn</value>
    </property>
 </configuration>

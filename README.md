@@ -63,7 +63,9 @@ export HADOOP_CONF_DIR="/usr/local/hadoop/etc/hadoop"             //指出hadoop
 ALL：创建存储数据的目录，本实验是/var/hadoop     在core-site.xml里描述                              
 node：拷贝hadoop的目录，本实验是/usr/local/hadoop                              
 nn01： 格式化   /usr/local/hadoop/bin/hdfs   namenode   -format                                     
-nn01: 启动集群：/usr/local/hadoop/sbin/start-dfs.sh                               
+nn01: 启动集群：/usr/local/hadoop/sbin/start-dfs.sh
+nn01: 启动yarn：/usr/local/hadoop/sbin/start-yarn.sh
+nn01:启动全部：/usr/local/hadoop/sbin/start-all.sh
 验证： all ： jps                                        
       nn01：  /usr/local/hadoop/bin/hdfs   dfsadmin  -report                              
 

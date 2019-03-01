@@ -32,6 +32,12 @@ ansible  传递ssh-keygen   公钥
 
 对于配置文件，需要查看官方手册:http://hadoop.apache.org/docs/    ->  版本    -> 最下方左侧Configuration 项目中
 
+修改配置文件：/usr/local/hadoop/etc/hadoop/hadoop-env.sh
+export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64/jre/"                   //指出jdk所在目录
+export HADOOP_CONF_DIR="/usr/local/hadoop/etc/hadoop"             //指出hadoop配置文件所在位置
+
+查看jdk所在目录方法：rpm -ql java-1.8.0-openjdk               //看所有的文件的公共路径
+
 在/usr/local/hadoop/etc    下的core-site.xml   hdfs-site.xml                                
 <configuration>                            
    <property>                                      

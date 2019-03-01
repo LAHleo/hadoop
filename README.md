@@ -39,13 +39,13 @@ export HADOOP_CONF_DIR="/usr/local/hadoop/etc/hadoop"             //指出hadoop
 查看jdk所在目录方法：rpm -ql java-1.8.0-openjdk               //看所有的文件的公共路径
 
 在/usr/local/hadoop/etc    下的core-site.xml   hdfs-site.xml                                
-<configuration>                            
-   <property>                                      
-      <name></name>                                   
-      <value></value>                              
-      <description></description>             //描述信息，可写可不写                                 
-   </property>                                   
-</configuration>                         
+#<configuration>                            
+#   <property>                                      
+#      <name></name>                                   
+#      <value></value>                              
+#      <description></description>             //描述信息，可写可不写                                 
+#   </property>                                   
+#</configuration>                         
    
 配置文件 slaves                            
 里面添加所有作Datanode的主机名                           

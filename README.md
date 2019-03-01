@@ -78,6 +78,49 @@ http://192.168.1.10:8088
 http://192.168.1.11:50075
 http://192.168.1.11:8042
 
+--------------------------------------------------------------------------------------------------------------------
+使用nfs技术，通过挂载，直接访问hadoop的库目录：
+nn01：
+1.停止hadoop集群
+nn01:  ./sbin/stop-all.sh
+2.nn01,nfsgw:添加用户
+groupadd   -g  800   nfsuser
+useradd   -g  800   -u  800   nfsuser
+3.nn01: hdfs 授权
+ 	core-site.xml
+hadoop.proxyuser.nfsuser.groups		value:	*
+hadoop.proxyuser.nfsuser.hosts		value:	*
+ 
+4.同步配置到收有结点
+5.启动服务
+ 
+-----------------------------------------------------------------------------------------------
+nfsgw
+1.卸载rpcbind  nfs-utils
+2.配置/etc/hosts
+3.安装java-1.8.0-openjdk-devel
+4.同步 nn01上的/usr/local/hadoop
+5.配置 hdfs-site-xml
+nfs.exports.allowed.hosts		value:   *  rw
+nfs.dump.dir					value:   /var/nfstmp
+6.创建目录：  /var/nfstmp
+7.设置nfsuser对/var/nfstmp      和对/user/local/hadoop/logs   有读写权
+8.启动rpcbind
+9.启动nfs3
+ 
+ 
+注意事项：1.必须先启动rpcbind  再启动nfs3
+   2.启动rpcbind 必须用root用户
+[root@nfsgw hadoop]# /usr/local/hadoop/sbin/hadoop-daemon.sh   --script /usr/local/hadoop/bin/hdfs  start portmap
+   3.启动nfs3  必须用nfsuser用户
+[nfsuser@nfsgw hadoop]$ /usr/local/hadoop/sbin/hadoop-daemon.sh   --script /usr/local/hadoop/bin/hdfs  start nfs3
+   运行nfs3服务的用户是nfsuser用户  ： nfsuser   对/var/nfstmp   有读写权						（使用setfacl设置权限）
+              nfsuser   对/user/local/hadoop/logs   有读写权
+ 
+客户端client：
+安装nfs-utils
+挂载：mount -t nfs  -o vers=3,proto=tcp,nolock,noatime,sync 192.168.1.15:/  /mnt/
+ 
 
 
 

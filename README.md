@@ -67,6 +67,19 @@ nn01: 启动集群：/usr/local/hadoop/sbin/start-dfs.sh
 nn01: 启动yarn：/usr/local/hadoop/sbin/start-yarn.sh
 nn01:启动全部：/usr/local/hadoop/sbin/start-all.sh
 验证： all ： jps                                        
-      nn01：  /usr/local/hadoop/bin/hdfs   dfsadmin  -report                              
+      nn01：  /usr/local/hadoop/bin/hdfs   dfsadmin  -report
+      
+      
+
+web页面浏览
+http://192.168.1.10:50070
+http://192.168.1.10:50090
+http://192.168.1.10:8088
+http://192.168.1.11:50075
+http://192.168.1.11:8042
+
+
+
+
 
 

@@ -1,0 +1,10 @@
+1.关闭hadoop集群,增加主机内存
+2.安装包,(解压包),mv到/usr/local/zookeeper        
+3.配置zoo.cfg    (将zoo_simple.cfg备份,改名)
+   server.1=node1:2888:3888
+   server.2=node2:2888:3888
+   server.3=node3:2888:3888
+   server.4=nn01:2888:3888:observer
+4.创建运行id(每个server节点都要创建): mkdir   /tmp/zooleeper     (这个位置在zoo.cfg里面能看到'dataDir=/tmp/zookeeper')
+                                  echo    对应主机的id值    >  /tmp/zookeeper/myid
+5.将/usr/local/zookeeper   发送给每台节点
